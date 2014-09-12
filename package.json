@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
+  "author": {
+    "name": "Dusan Krajcovic",
+    "email": "dusan.krajcovic@gmail.com"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node --debug index.js"
   },
   "dependencies": {
     "express": "~3.4.x"
@@ -14,16 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/krajcovic/node-js-getting-started"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
-  ],
-  "author": "Mark Pundsack",
-  "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
   ],
   "license": "MIT"
 }

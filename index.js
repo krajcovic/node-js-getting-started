@@ -21,3 +21,23 @@ http.createServer(function(request, response) {
 	response.end();
 }).listen(app.get('port_01'));
 console.log("Http server listening on port " + app.get('port_01') + "....");
+
+/* WebSocket */
+var server = http.createServer(app);
+app.set('port_02', ( parseInt(process.env.PORT)  + 2 || 5000 + 2))
+server.listen(app.get('port_02'));
+
+var wss = new WebSocketServer({server: server});
+console.log('websocket server created');
+wss.on('connection', function(ws) {
+  var id = setInterval(function() {
+    ws.send(JSON.stringify(new Date()), function() {  });
+  }, 1000);
+
+  console.log('websocket connection open');
+
+  ws.on('close', function() {
+    console.log('websocket connection close');
+    clearInterval(id);
+  });
+});
