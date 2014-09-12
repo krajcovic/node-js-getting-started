@@ -17,7 +17,8 @@
     "mocha": "1.6.x",
     "supertest": "0.4.x",
     "should": "1.2.x",
-    "horaa": "0.1.x"
+    "horaa": "0.1.x",
+    "diacritics": "1.2.x"
   },
   "engines": {
     "node": "0.10.x",

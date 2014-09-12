@@ -1,5 +1,6 @@
 --require ./test/mocha.js
 --require should
+--require diacritics
 --reporter dot
 --ui bdd
 --recursive 
