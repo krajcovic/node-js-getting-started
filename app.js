@@ -14,6 +14,6 @@ var PageController = require('./app/controllers/PageController');
 var Page = require('./app/models/Page');
 
 //API stranky
-app.resource('pages', PageController, {base: '/api/', load: Page.findOneByUrl});
+app.resource('pages', PageController, {base: '/v1/api/', load: Page.findOneByUrl});
    
 module.exports = app;
