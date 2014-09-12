@@ -1,36 +1,35 @@
-# node-js-getting-started
+[![Build Status](https://travis-ci.org/JakubMrozek/Zdrojak.png)](https://travis-ci.org/JakubMrozek/Zdrojak)
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+* Seriál pro Zdroják: http://www.zdrojak.cz/serialy/node-js-s-javascriptem-na-serveru/
+* Homepage seriálu: http://jakubmrozek.github.com/Zdrojak/
 
-This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+7. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/testovani-a-kontinualni-integrace/
+* Demo: http://infinite-ridge-6275.herokuapp.com/
 
-## Running Locally
+6. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/javascript-na-serveru-mongodb-mongoose-angularjs/
+* Demo: http://young-lake-7194.herokuapp.com/
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+5. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/javascript-na-serveru-zaciname-programovat-e-shop/
+* Demo: http://afternoon-eyrie-1430.herokuapp.com/ 
 
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
+4. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/javascript-na-serveru-moduly-a-node-package-manager/
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+3. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/javascript-na-serveru-architektura-a-prvni-hello-world/
 
-## Deploying to Heroku
+2. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/javascript-na-serveru-patri-budoucnost-node-js/
 
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+1. díl
+======
+* Článek: http://www.zdrojak.cz/clanky/javascript-na-serveru-zaciname-s-node-js/
