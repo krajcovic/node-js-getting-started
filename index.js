@@ -5,8 +5,9 @@ var http = require('http');
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
+var pocet = 0;
 app.get('/', function(request, response) {
-  response.send('Hello , this is app express framework!\n')
+  response.send('Hello , this is app express framework! (' + ++pocet+ ')\n')
 })
 
 app.listen(app.get('port'), function() {
