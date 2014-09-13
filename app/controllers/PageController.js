@@ -36,7 +36,9 @@ exports.create = function(req, res, next){
     page.content = req.body.content;
     page.save(function(err, doc) {
         if (err) return next(err);
-        res.json(doc);
+        var location = util.fullUrl('/' + req.path + '/' + doc.url, req);
+        res.setHeader('location', location);
+        res.send(201);
     });
 };
 
@@ -60,6 +62,7 @@ exports.update = function(req, res, next){
 exports.destroy = function(req, res, next){
     req.page.remove(function(err, doc) {
         if (err) return next(err);
-        res.json(doc);
+        // res.json(doc);
+        res.send(204);
     });
 };

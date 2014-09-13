@@ -31,10 +31,10 @@ describe('API pages', function(){
         }); 
     });
     
-    describe('GET /api/pages', function(){
+    describe('GET /v1/api/pages', function(){
         it('vrati seznam vsech polozek v databazi', function(done){
             request(app)
-                .get('/api/pages')
+                .get('/v1/api/pages')
                 .expect(200)
                 .end(function(err, res) {
                     res.body.length.should.eql(2);
@@ -44,7 +44,7 @@ describe('API pages', function(){
         });
         it('vrati jen urcene sloupce', function(done){
             request(app)
-                .get('/api/pages?fields=url')
+                .get('/v1/api/pages?fields=url')
                 .expect(200)
                 .end(function(err, res) {
                     res.body.length.should.eql(2);
@@ -56,15 +56,15 @@ describe('API pages', function(){
         });
         it('vrati kod 400 pri zadani pole, ktere neexistuje v databazi', function(done){
             request(app)
-                .get('/api/pages?fields=abc')
+                .get('/v1/api/pages?fields=abc')
                 .expect(400, done);
         })
     })  
     
-    describe('GET /api/pages/:page', function(){
+    describe('GET /v1/api/pages/:page', function(){
         it('vrati detail jedne stranky', function(done){
             request(app)
-                .get('/api/pages/stranka-1')
+                .get('/v1/api/pages/stranka-1')
                 .expect(200)
                 .end(function(err, res) {
                     res.body.should.include(data[0]);
@@ -73,15 +73,15 @@ describe('API pages', function(){
         });
         it('vrati 404, pokud stranka neexistuje', function(done){
             request(app)
-                .get('/api/pages/neexistuje')
+                .get('/v1/api/pages/neexistuje')
                 .expect(404, done);
         });
     });
     
-    describe('POST /api/pages', function(){
+    describe('POST /v1/api/pages', function(){
         it('vlozi novou stranku do databaze', function(done){
             request(app)
-                .post('/api/pages')
+                .post('/v1/api/pages')
                 .send({title: 'titulek ABC', content: 'lorem ipsum set dolorem'})
                 .expect(200)
                 .end(function(err, res){
@@ -93,15 +93,15 @@ describe('API pages', function(){
                 });
         });
         it('vrati 400, pokud chybi titulek nebo obsah', function(done){
-            request(app).post('/api/pages')
+            request(app).post('/v1/api/pages')
                 .expect(400, done);
         });
     });
     
-    describe('PUT /api/pages/:page', function(){
+    describe('PUT /v1/api/pages/:page', function(){
         it('upravi obsah stranky', function(done){
             request(app)
-                .put('/api/pages/stranka-1')
+                .put('/v1/api/pages/stranka-1')
                 .send({title: 'titulek ABC', content: 'lorem ipsum set dolorem'})
                 .expect(200)
                 .end(function(err, res){
@@ -114,20 +114,20 @@ describe('API pages', function(){
         });
         it('vrati 400, pokud chybi titulek nebo obsah', function(done){
             request(app)
-                .put('/api/pages/stranka-1')
+                .put('/v1/api/pages/stranka-1')
                 .expect(400, done);
         });
         it('vrati 404, pokud stranka neexistuje', function(done){
             request(app)
-                .put('/api/pages/neexistuje')
+                .put('/v1/api/pages/neexistuje')
                 .expect(404, done);
         });
     });
     
-    describe('DELETE /api/pages/:page', function(){
+    describe('DELETE /v1/api/pages/:page', function(){
         it('smaze stranku z databaze', function(done){
             request(app)
-                .del('/api/pages/stranka-1')
+                .del('/v1/api/pages/stranka-1')
                 .expect(200)
                 .end(function(err, res){
                     Page.count({url: 'stranka-1'}, function(err, count) {
@@ -138,7 +138,7 @@ describe('API pages', function(){
         });
         it('vrati 404, pokud stranka neexistuje', function(done){
             request(app)
-                .del('/api/pages/neexistuje')
+                .del('/v1/api/pages/neexistuje')
                 .expect(404, done);
         });
     });
