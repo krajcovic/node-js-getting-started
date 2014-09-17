@@ -9,6 +9,6 @@ describe('url filter', function(){
     //TODO 
     //pridat dalsi testy
     it('prevede diakrituku', function() {
-    	url(removeDiacritics('Příliš žluťoučký kůň úpěl ďábelské ódy')).should.eql('Prilis-zlutoucky-kun-upel-dabelske-ody');
+    	url(removeDiacritics('Příliš žluťoučký kůň úpěl ďábelské ódy')).should.eql('prilis-zlutoucky-kun-upel-dabelske-ody');
     })
 });

@@ -2,6 +2,27 @@ var Page = require(process.cwd() + '/app/models/Page')
   , filters = {};
   
 filters.url = require(process.cwd() + '/lib/filters/url');
+var error = require(process.cwd() + '/lib/error');
+var util = require(process.cwd() + '/lib/util');
+
+
+/**
+ * Nahraje stranku podle URL.
+ * 
+ * Automaticky pred zpracovanim akce controlleru nahraje
+ * konkretni stranku z kolekce. Dokument pak bude dostupny
+ * pres req.page. Pokud stranka v databazi neexistuje, 
+ * preda chybu 404 k dalsimu zpracovani.
+ * 
+ * @param {ServerRequest} req
+ * @param {String} url
+ * @param {Function} cb
+ */
+
+exports.load = function(req, url, cb) {
+  Page.findOneByUrl(url, cb);
+};
+
 
 /**
  * GET /pages
