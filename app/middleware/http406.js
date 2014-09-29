@@ -2,7 +2,7 @@
 /**
  * Chyby.
  */
-var NotAcceptable = require(process.cwd() + '/app/middleware/error').NotAcceptable;
+var NotAcceptable = require(process.cwd() + '/lib/error').NotAcceptable;
 
 /**
  * Kontrola, zda je schopen uzivatel zpracovat HTTP odpoved v JSON.

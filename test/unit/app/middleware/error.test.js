@@ -1,5 +1,5 @@
 var error = require(process.cwd() + '/app/middleware/error');
-var NotAcceptable = require(process.cwd() + '/app/middleware/error').NotAcceptable;
+var NotAcceptable = require(process.cwd() + '/lib/error').NotAcceptable;
 
 describe('middleware error', function(){
     

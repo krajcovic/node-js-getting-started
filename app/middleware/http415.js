@@ -2,7 +2,7 @@
 /**
  * Chyby.
  */
-var UnsupportedMediaType = require(process.cwd() + '/app/middleware/error').UnsupportedMediaType;
+var UnsupportedMediaType = require(process.cwd() + '/lib/error').UnsupportedMediaType;
 
 /**
  * Kontrola, zda byl HTTP pozadavek zaslan v JSON.

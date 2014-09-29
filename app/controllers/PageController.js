@@ -29,7 +29,7 @@ exports.load = function(req, url, cb) {
  */
 exports.index = function(req, res, next){
     if (!Page.inSchema(req.zdrojak.fields)) {
-        return next(400);
+        return next(new error.NotInFields());
     }
     
     Page.find({}, req.zdrojak.fields, function(err, docs) {
@@ -48,19 +48,25 @@ exports.show = function(req, res, next){
 /**
  * POST /pages
  * 
- * @todo
+ * @param {ServerRequest} req
+ * @param {ServerResponse} res
+ * @param {Function} next
  */
+
 exports.create = function(req, res, next){
-    var page = new Page();
-    page.title = req.body.title;
-    page.url = filters.url(req.body.title);
-    page.content = req.body.content;
-    page.save(function(err, doc) {
-        if (err) return next(err);
-        var location = util.fullUrl('/' + req.path + '/' + doc.url, req);
-        res.setHeader('location', location);
-        res.send(201);
-    });
+  var page = new Page();
+  page.title = req.body.title;
+  //page.url = url(req.body.title);
+  page.url = filters.url(req.body.title);
+  page.content = req.body.content;
+  page.save(function(err, doc) {
+    if (err) {
+      return next(err);
+    }
+    var location = util.fullUrl('/' + req.path + '/' + doc.url, req);
+    res.setHeader('location', location);
+    res.send(201);
+  });
 };
 
 /**

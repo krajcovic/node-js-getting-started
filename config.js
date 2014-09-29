@@ -19,7 +19,7 @@ exports.configure = function(app) {
         app.set('db uri', 'mongodb://krajcovic:Os3lenihosi@kahana.mongohq.com:10039/app29464868');
     });
     app.configure('test', function(){
-        app.set('db uri', 'mongodb://test:test@lennon.mongohq.com:10035/app29495523');
+        app.set('db uri', 'mongodb://localhost:27017/test');
     });
 }
 

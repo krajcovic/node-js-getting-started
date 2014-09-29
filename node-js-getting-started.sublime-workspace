@@ -67,18 +67,26 @@
 			"file": "app/controllers/PageController.js",
 			"settings":
 			{
-				"buffer_size": 1944,
+				"buffer_size": 1987,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 2642 files for \"API pages POST\"\n\n0 matches across 0 files\n\n\nSearching 2642 files for \"pokud chybi titulek nebo obsa\"\n\n/home/krajcovic/workspace/sources/nodejs/node-js-getting-started/test/api/pages.test.js:\n   93                  });\n   94          });\n   95:         it('vrati 400, pokud chybi titulek nebo obsah', function(done){\n   96              request(app).post('/v1/api/pages')\n   97                  .expect(400, done);\n   ..\n  113                  });\n  114          });\n  115:         it('vrati 400, pokud chybi titulek nebo obsah', function(done){\n  116              request(app)\n  117                  .put('/v1/api/pages/stranka-1')\n\n2 matches in 1 file\n",
+			"contents": "Searching 2642 files for \"API pages POST\"\n\n0 matches across 0 files\n\n\nSearching 2642 files for \"pokud chybi titulek nebo obsa\"\n\n/home/krajcovic/workspace/sources/nodejs/node-js-getting-started/test/api/pages.test.js:\n   93                  });\n   94          });\n   95:         it('vrati 400, pokud chybi titulek nebo obsah', function(done){\n   96              request(app).post('/v1/api/pages')\n   97                  .expect(400, done);\n   ..\n  113                  });\n  114          });\n  115:         it('vrati 400, pokud chybi titulek nebo obsah', function(done){\n  116              request(app)\n  117                  .put('/v1/api/pages/stranka-1')\n\n2 matches in 1 file\n\n\nSearching 2643 files for \"priliszlu\"\n\n0 matches across 0 files\n\n\nSearching 2643 files for \"prilis-zlu\"\n\n/home/krajcovic/workspace/sources/nodejs/node-js-getting-started/test/unit/lib/filters/url.test.js:\n   10      //pridat dalsi testy\n   11      it('prevede diakrituku', function() {\n   12:     	url(removeDiacritics('Příliš žluťoučký kůň úpěl ďábelské ódy')).should.eql('Prilis-zlutoucky-kun-upel-dabelske-ody');\n   13      })\n   14  });\n\n1 match in 1 file\n\n\nSearching 2643 files for \"API before\"\n\n0 matches across 0 files\n",
 			"settings":
 			{
-				"buffer_size": 678,
+				"buffer_size": 1205,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
+			}
+		},
+		{
+			"file": "test/unit/lib/filters/url.test.js",
+			"settings":
+			{
+				"buffer_size": 490,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -165,16 +173,16 @@
 	"build_system": "npm test",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 159.0,
 		"selected_items":
 		[
 			[
-				"push",
-				"Git: Push"
-			],
-			[
 				"commit",
 				"Git: Commit"
+			],
+			[
+				"push",
+				"Git: Push"
 			],
 			[
 				"git",
@@ -233,7 +241,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -244,6 +252,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"POST",
+			"API before",
+			"prilis-zlu",
+			"priliszlu",
 			"pokud chybi titulek nebo obsa",
 			"API pages POST",
 			"undefine",
@@ -268,7 +280,7 @@
 	"groups":
 	[
 		{
-			"selected": 17,
+			"selected": 15,
 			"sheets":
 			[
 				{
@@ -283,8 +295,8 @@
 						"selection":
 						[
 							[
-								577,
-								577
+								429,
+								429
 							]
 						],
 						"settings":
@@ -466,25 +478,25 @@
 					"file": "app/controllers/PageController.js",
 					"settings":
 					{
-						"buffer_size": 1944,
+						"buffer_size": 1987,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1942,
-								1942
+								1181,
+								1181
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 357.0,
+						"translation.y": 867.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -493,7 +505,7 @@
 					"buffer": 8,
 					"settings":
 					{
-						"buffer_size": 678,
+						"buffer_size": 1205,
 						"regions":
 						{
 							"match":
@@ -508,6 +520,10 @@
 									[
 										521,
 										550
+									],
+									[
+										1053,
+										1063
 									]
 								],
 								"scope": ""
@@ -516,14 +532,14 @@
 						"selection":
 						[
 							[
-								491,
-								497
+								1141,
+								1141
 							]
 						],
 						"settings":
 						{
 							"detect_indentation": false,
-							"output_tag": 2,
+							"output_tag": 5,
 							"result_base_dir": "",
 							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -531,13 +547,39 @@
 							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 68.0,
+						"translation.y": 612.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 9,
+					"file": "test/unit/lib/filters/url.test.js",
+					"settings":
+					{
+						"buffer_size": 490,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								490,
+								490
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
 					"file": "test/unit/app/middleware/error.test.js",
 					"settings":
 					{
@@ -565,7 +607,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "test/unit/app/middleware/fields.test.js",
 					"settings":
 					{
@@ -593,7 +635,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "config.js",
 					"settings":
 					{
@@ -621,7 +663,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "test/unit/app/middleware/http406.test.js",
 					"settings":
 					{
@@ -649,7 +691,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "test/unit/app/middleware/http415.test.js",
 					"settings":
 					{
@@ -677,7 +719,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "test/api/pages.test.js",
 					"settings":
 					{
@@ -688,8 +730,8 @@
 						"selection":
 						[
 							[
-								3961,
-								3961
+								2562,
+								2562
 							]
 						],
 						"settings":
@@ -699,13 +741,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1265.0,
+						"translation.y": 1122.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "node-js-getting-started.sublime-project",
 					"settings":
 					{
@@ -733,7 +775,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "app/models/Page.js",
 					"settings":
 					{
@@ -761,7 +803,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "app.js",
 					"settings":
 					{
@@ -787,7 +829,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"file": "lib/filters/url.js",
 					"settings":
 					{

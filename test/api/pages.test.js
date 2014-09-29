@@ -78,51 +78,74 @@ describe('API pages', function(){
         });
     });
     
-    describe('POST /v1/api/pages', function(){
-        it('vlozi novou stranku do databaze', function(done){
-            request(app)
-                .post('/v1/api/pages')
-                .send({title: 'titulek ABC', content: 'lorem ipsum set dolorem'})
-                .expect(200)
-                .end(function(err, res){
-                    Page.findOne({title: 'titulek ABC'}, function(err, doc) {
-                        doc.title.should.equal('titulek ABC');
-                        doc.content.should.equal('lorem ipsum set dolorem');
-                        done();
-                    });
-                });
-        });
-        it('vrati 400, pokud chybi titulek nebo obsah', function(done){
-            request(app).post('/v1/api/pages')
-                .expect(400, done);
+  describe('POST /v1/api/pages', function(){
+    it('vlozi novou stranku do databaze', function(done){
+      request(app)
+        .post('/v1/api/pages')
+        .send({title: 'titulek-ABC', content: 'lorem ipsum set dolorem'})
+        .expect(201)
+        .end(function(err, res){
+          if (err) return done(err);
+          res.should.have.header('location');
+          Page.findOne({title: 'titulek-ABC'}, function(err, doc) {
+            if (err) return done(err);
+            doc.title.should.equal('titulek-ABC');
+            doc.content.should.equal('lorem ipsum set dolorem');
+            done();
+          });
         });
     });
+    it('vrati 400, pokud chybi titulek nebo obsah', function(done){
+      request(app)
+        .post('/v1/api/pages')
+        .send({})
+        .expect(400, done);
+    });
+    it('vrati 415, pokud byla data zaslana v jinem formatu nez JSON', function(done){
+      request(app)
+        .post('/v1/api/pages')
+        .set('Content-Type', 'application/xml')
+        .send('<xml>root</xml>')
+        .expect(415, done);
+    });
+  });
     
-    describe('PUT /v1/api/pages/:page', function(){
-        it('upravi obsah stranky', function(done){
-            request(app)
-                .put('/v1/api/pages/stranka-1')
-                .send({title: 'titulek ABC', content: 'lorem ipsum set dolorem'})
-                .expect(200)
-                .end(function(err, res){
-                    Page.findOne({title: 'titulek ABC'}, function(err, doc) {
-                        doc.title.should.equal('titulek ABC');
-                        doc.content.should.equal('lorem ipsum set dolorem');
-                        done();
-                    });
-                });
-        });
-        it('vrati 400, pokud chybi titulek nebo obsah', function(done){
-            request(app)
-                .put('/v1/api/pages/stranka-1')
-                .expect(400, done);
-        });
-        it('vrati 404, pokud stranka neexistuje', function(done){
-            request(app)
-                .put('/v1/api/pages/neexistuje')
-                .expect(404, done);
+  describe('PUT /v1/api/pages/:page', function(){
+    it('upravi obsah stranky', function(done){
+      request(app)
+        .put('/v1/api/pages/stranka-1')
+        .send({title: 'titulek ABC', content: 'lorem ipsum set dolorem'})
+        .expect(200)
+        .end(function(err, res){
+          if (err) return done(err);
+          Page.findOne({title: 'titulek ABC'}, function(err, doc) {
+            if (err) return done(err);
+            doc.title.should.equal('titulek ABC');
+            doc.content.should.equal('lorem ipsum set dolorem');
+            done();
+          });
         });
     });
+    it('vrati 400, pokud chybi titulek nebo obsah', function(done){
+      request(app)
+        .put('/v1/api/pages/stranka-1')
+        .send({})
+        .expect(400, done);
+    });
+    it('vrati 404, pokud stranka neexistuje', function(done){
+      request(app)
+        .put('/v1/api/pages/neexistuje')
+        .send({title: 'titulek ABC', content: 'lorem ipsum set dolorem'})
+        .expect(404, done);
+    });
+    it('vrati 415, pokud byla data zaslana v jinem formatu nez JSON', function(done){
+      request(app)
+        .put('/v1/api/pages/stranka-1')
+        .set('Content-Type', 'application/xml')
+        .send('<xml>root</xml>')
+        .expect(415, done);
+    });
+  });
     
     describe('DELETE /v1/api/pages/:page', function(){
         it('smaze stranku z databaze', function(done){
